@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Bio Link</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="your-profile-picture.jpg" alt="Profile Picture" class="profile-pic">
+        <h1 id="dynamic-title">Your Name - <span>Connect</span></h1>
+        <p id="greeting"></p>
+        <p>Welcome to my bio link page. Connect with me on social media!</p>
+        <div class="social-links">
+            <!-- Replace '#' with your actual social media links -->
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">Instagram</a>
+            <!-- Add more links as needed -->
+        </div>
+    </div>
+
+    <script>
+        const words = ["Connect", "Explore", "Discover", "Join"];
+        let wordIndex = 0;
+
+        function changeWord() {
+            const titleSpan = document.querySelector('#dynamic-title span');
+            titleSpan.textContent = words[wordIndex];
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+
+        setInterval(changeWord, 3000); // Change word every 3 seconds
+
+        // Hover effect JavaScript
+        document.querySelectorAll('.social-links a').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.style.transform = 'scale(1.1)';
+            });
+            link.addEventListener('mouseleave', () => {
+                link.style.transform = 'scale(1)';
+            });
+        });
+    
+        // Dynamic title change JavaScript
+        const words = ["Connect", "Explore", "Discover", "Join"];
+        let wordIndex = 0;
+    
+        function changeWord() {
+            const titleSpan = document.querySelector('#dynamic-title span');
+            titleSpan.textContent = words[wordIndex];
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+    
+        setInterval(changeWord, 3000); // Change word every 3 seconds
+    </script>
+    
+</body>
+</html>
